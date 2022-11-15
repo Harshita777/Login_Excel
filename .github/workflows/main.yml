@@ -2,7 +2,7 @@ name: 'foo'
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 env:
   SOME_THING: sweet
@@ -12,10 +12,10 @@ jobs:
     if: github.ref != 'refs/heads/master'
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@master
+        uses: actions/checkout@main
   deploy:
     runs-on: windows-latest
     if: github.ref == 'refs/heads/master'
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@master
+        uses: actions/checkout@main
